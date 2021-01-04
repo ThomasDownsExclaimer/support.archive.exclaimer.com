@@ -1,1 +1,1 @@
-support.archive.exclaimer.com
+zd-test-theme

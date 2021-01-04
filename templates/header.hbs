@@ -1,0 +1,37 @@
+<header class="header">
+  <div class="logo">
+    {{#link 'help_center'}}
+      <img src="{{asset 'exclaimer-full-logo.png'}}" alt="{{t 'home_page' name=help_center.name}}">
+    {{/link}}
+  </div>
+  <div class="nav-wrapper">
+    <button class="menu-button" aria-controls="user-nav" aria-expanded="false" aria-label="{{t 'toggle_navigation'}}">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" focusable="false" viewBox="0 0 16 16" class="icon-menu">
+        <path fill="none" stroke="currentColor" stroke-linecap="round" d="M1.5 3.5h13m-13 4h13m-13 4h13"/>
+      </svg>
+    </button>
+    <nav class="user-nav" id="user-nav">
+      <a class="submit-a-request" href="https://www.exclaimer.com/support/raise-ticket">Raise a ticket with Support</a>
+    </nav>
+    {{#if signed_in}}
+      <div class="user-info dropdown">
+        <div class="btn with-image dropdown-toggle" aria-haspopup="true">
+          {{user_avatar class="user-avatar"}}
+          <span class="hide-on-mobile">
+            {{user_name}}
+          </span>
+        </div>
+        <div class="dropdown-menu" role="menu">
+          <a role="menuitem" href="https://support.exclaimer.com/hc/en-gb/requests">My activites</a>
+          <a role="menuitem" href="/access/logout?return_to=https://exclaimercloud.zendesk.com/hc/en-gb">Sign out</a>
+        </div>
+      </div>
+    {{else}}
+      {{#link "sign_in" class="sign-in"}}
+        {{t 'sign_in'}}
+      {{/link}}
+    {{/if}}
+  </div>
+</header>
+
+

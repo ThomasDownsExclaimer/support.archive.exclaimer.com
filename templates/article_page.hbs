@@ -1,0 +1,132 @@
+<div class="container-divider categories-divider"></div>
+<div class="subnav">
+    <div class="subnav__search">
+        {{search submit=false}}
+    </div>
+   <div class="subnav__breadcrumbs">
+    <a href="/hc/en-gb" title="Return to Home" class="breadcrumbs-btn">
+      Return to Home
+    </a>
+    <a href="https://portal.exclaimer.com" title="Return to Portal" class="breadcrumbs-btn" target="_blank">
+      Return to Portal
+    </a>
+   </div>
+  </div>
+
+<div class="main__container">
+  
+  <div class="col-left">
+    <ul class="side-bar-custom">
+      <li>
+        <a class="sidenav-item" href="/hc/en-gb/sections/360010737611">Welcome home</a>
+      </li>
+      {{!-- <li>
+        <a class="sidenav-item" href="/hc/en-gb/sections/360010737631">Configuration</a>
+        <ul class="side-bar-custom-sub">
+          <li>
+            <a class="sidenav-item" href="/hc/en-gb/sections/360009924851-Connect-to-Microsoft-365">Connect to Microsoft 365</a>
+          </li>
+          <li>
+            <a class="sidenav-item" href="/hc/en-gb/sections/360009924871-Manage-User-Data">Manage User Data</a>
+          </li>
+          <li>
+            <a class="sidenav-item" href="/hc/en-gb/sections/360009924891-Manage-Mail-Flow">Manage Mail Flow</a>
+          </li>
+          <li>
+            <a class="sidenav-item" href="/hc/en-gb/sections/360009806832-Outlook-Signatures">Outlook Signatures</a>
+          </li>
+        </ul>
+      </li> --}}
+      <li>
+        <a class="sidenav-item" href="/hc/en-gb/sections/360010621172" class="border-top">Signatures</a>
+        <ul class="side-bar-custom-sub">
+          <li>
+            <a class="sidenav-item" href="/hc/en-gb/sections/360010804291">Create Signature</a>
+          </li>
+          <li>
+            <a class="sidenav-item" href="/hc/en-gb/sections/360010804331">Create Folder</a>
+          </li>
+          <li>
+            <a class="sidenav-item" href="/hc/en-gb/sections/360010804351">Edit Signature Design</a>
+          </li>
+          <li>
+            <a class="sidenav-item" href="/hc/en-gb/sections/360010804371">Manage Signature Rules</a>
+          </li>
+          <li>
+            <a class="sidenav-item" href="/hc/en-gb/sections/360010690532">Folder Security</a>
+          </li>
+        </ul>
+      </li>
+      {{!-- <li>
+        <a class="sidenav-item" href="/hc/en-gb/sections/360010737651">Account Settings</a>
+      </li>
+      <li>
+        <a class="sidenav-item" href="/hc/en-gb/sections/360010621192">Troubleshooting</a>
+      </li> --}}
+      <li>
+        <a class="sidenav-item" href="/hc/en-gb/articles/360050338692">Glossary</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="col-right">
+    <article class="article">
+      <header class="article-header">
+        <div>
+        <h2 title="{{article.title}}" class="article-title">
+          <strong>
+            {{article.title}}
+          </strong>
+        </h2>
+        </div>
+        <div class="article-author-full">
+          {{#if settings.show_article_author}}
+          <div class="avatar article-avatar">
+            {{#if article.author.agent}}
+              <span class="icon-agent"></span>
+            {{/if}}
+            <img src="{{article.author.avatar_url}}" alt="" class="user-avatar"/>
+          </div>
+          {{/if}}
+          <div class="article-author-info">
+            {{#if settings.show_article_author}}
+              {{#link 'user_profile' id=article.author.id}}
+              {{article.author.name}}
+              {{/link}}
+            {{/if}}
+            <div class="article-meta-data">
+            {{#is article.created_at article.edited_at}}
+              <li class="meta-data">{{date article.created_at timeago=true}}</li>
+            {{else}}
+              <li class="meta-data">{{date article.edited_at timeago=true}}</li>
+              <li class="meta-data">{{t 'updated'}}</li>
+            {{/is}}
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section class="article-info">
+        <div class="article-content">
+          <div class="article-body">{{article.body}}</div>
+          <div class="article-attachments">
+            <ul class="attachments">
+              {{#each attachments}}
+                <li class="attachment-item">
+                  <a href="{{url}}" target="_blank">{{name}}</a>
+                  <div class="attachment-meta meta-group">
+                    <span class="attachment-meta-item meta-data">{{size}}</span>
+                    <a href="{{url}}" target="_blank" class="attachment-meta-item meta-data">Download</a>
+                  </div>
+                </li>
+              {{/each}}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {{pagination}}
+    </article>
+  </div>
+
+</div>

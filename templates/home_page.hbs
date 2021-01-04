@@ -1,0 +1,83 @@
+<h1 class="visibility-hidden">{{ help_center.name }}</h1>
+
+<section class="section hero">
+  <div class="hero-inner">
+    <h2><strong>How can we help?</strong></h2>
+    <p>Start by typing a question or topic below.</p>
+    {{search submit=false instant=settings.instant_search class='search search-full'}}
+  </div>
+</section>
+
+<section class="section whats-new">
+  <div class="container whats-new-container">
+    <a href="https://support.portal.exclaimer.com/hc/en-gb/articles/360050180772" title="Whats new in Exclaimer Cloud" class="whats-new-link">
+      <h3>Whats new in Exclaimer Cloud</h3>    
+      <p class="whats-new-p">Releases and changes to Exclaimer Cloud</p>
+</a>
+    <a href="https://support.portal.exclaimer.com/hc/en-gb/articles/360050180772" title="Whats new in Exclaimer Cloud" class="whats-new-btn">
+      Read more
+    </a>
+  </div>
+</section>
+
+<section class="main-section">
+  <div class="left-col">
+    <h2 class="home-categories__header">Choose a category below</h2>
+    <ul class="home-categories">
+      <li>
+        <a href="/hc/en-gb/sections/360010737611">Welcome home</a>
+      </li>
+      {{!-- <li>
+        <a href="/hc/en-gb/sections/360010737631">Configuration</a>
+        <ul class="home-categories__sub">
+          <li>
+            <a href="/hc/en-gb/sections/360009924851-Connect-to-Microsoft-365">Connect to Microsoft 365</a>
+          </li>
+          <li>
+            <a href="/hc/en-gb/sections/360009924871-Manage-User-Data">Manage User Data</a>
+          </li>
+          <li>
+            <a href="/hc/en-gb/sections/360009924891-Manage-Mail-Flow">Manage Mail Flow</a>
+          </li>
+          <li>
+            <a href="/hc/en-gb/sections/360009806832-Outlook-Signatures">Outlook Signatures</a>
+          </li>
+        </ul>
+      </li> --}}
+      <li>
+        <a href="/hc/en-gb/sections/360010621172" class="border-top">Signatures</a>
+        <ul class="home-categories__sub">
+          <li>
+            <a href="/hc/en-gb/sections/360010804291">Create Signature</a>
+          </li>
+          <li>
+            <a href="/hc/en-gb/sections/360010804331">Create Folder</a>
+          </li>
+          <li>
+            <a href="/hc/en-gb/sections/360010804351">Edit Signature Design</a>
+          </li>
+          <li>
+            <a href="/hc/en-gb/sections/360010804371">Manage Signature Rules</a>
+          </li>
+          <li>
+            <a href="/hc/en-gb/sections/360010690532">Folder Security</a>
+          </li>
+        </ul>
+      </li>
+      {{!-- <li>
+        <a href="/hc/en-gb/sections/360010737651">Account Settings</a>
+      </li>
+      <li>
+        <a href="/hc/en-gb/sections/360010621192">Troubleshooting</a>
+      </li> --}}
+      <li>
+        <a href="/hc/en-gb/articles/360050338692">Glossary</a>
+      </li>
+    </ul>
+  </div>  
+  <div class="right-col">
+    {{#if settings.show_recent_activity}}
+      {{recent_activity}}
+    {{/if}}
+  </div>
+</section>
