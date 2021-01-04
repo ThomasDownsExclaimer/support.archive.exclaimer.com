@@ -2,8 +2,9 @@
 support.archive.exclaimer.com
 
 # Change Log
-<<<<<<< HEAD
-=======
+## Version 1.0.0.4
+* Updated favicon to Exclaimer
+
 ## Version 1.0.0.3
 * Removed 'Return to portal' button
 
