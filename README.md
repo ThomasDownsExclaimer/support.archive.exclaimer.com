@@ -2,13 +2,15 @@
 support.archive.exclaimer.com
 
 # Change Log
+## Version 1.0.0.5
+* Removed old favicon file
+
 ## Version 1.0.0.4
 * Updated favicon to Exclaimer
 
 ## Version 1.0.0.3
 * Removed 'Return to portal' button
 
->>>>>>> development
 ## Version 1.0.0.2
 * live chat widget changes
 
