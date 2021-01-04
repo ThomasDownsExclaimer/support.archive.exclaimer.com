@@ -1,15 +1,7 @@
+  <!-- Widget configuration options -->
 <script type="text/javascript">
   window.zESettings = {
     webWidget: {
-      color: {
-        theme: '#F37021',
-        launcher: '#F37021', // This will also update the badge
-        launcherText: '#FFFFFF',
-        button: '#576476',
-        resultLists: '#576476',
-        header: '#576476',
-        articleLinks: '#F37021'
-      },
       launcher: {
         label: {
           '*': 'Get help?'
@@ -44,7 +36,7 @@
           '*': 'Ask Us Anything'
         },
         departments: {
-          enabled: ['Technical Support','Sales'],
+          enabled: ['Technical Support','Sales','Partners'],
           select: 'Technical Support'
         },
         hidewhenoffline: true,
@@ -74,10 +66,35 @@
         suppress: true
       },
       contactForm: {
-        suppress: true
+        title: {
+          '*': 'Raise a ticket'
+        },
+        selectTicketForm: {
+          '*': 'Please choose:'
+        },
+        ticketForms: [{ id: 360001126691 }]
       }
     }
   };
+</script>
+  
+<!-- Script turns off chat when Tech Support is unavailable -->
+<script>
+    $(document).ready(function () {
+      zE('webWidget:on', 'chat:departmentStatus', function (dept) {
+        if (dept.name === 'Technical Support') {
+          if (dept.status === 'offline') {
+            zE('webWidget', 'chat:end');
+            //zE('webWidget', 'close');
+            zE('webWidget', 'hide');
+            $('#my-button').show();
+          } else {
+            zE('webWidget', 'show');
+            $('#my-button').hide();
+          }
+        }
+      });
+    });
 </script>
 <footer class="footer">
   <div class="footer-inner">
