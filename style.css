@@ -1016,7 +1016,7 @@ ul {
 
 .whats-new-btn{
   padding: 10px 15px;
-  background-color: #f37021;
+  background-color: #0069d9;
   border-radius: 4px;
   font-size: .9em;
   color: #ffffff;
@@ -1659,8 +1659,13 @@ ul {
   padding: 10px;
 }
 
+.sidenav-item:hover {
+  background-color: #0069d9;
+  color: $brand_text_color;
+}
+
 .sidenav-item.current-article, .sidenav-item:hover {
-  background-color: $brand_color;
+  background-color: #0069d9;
   color: $brand_text_color;
   text-decoration: none;
 }
@@ -4690,7 +4695,7 @@ ul.home-categories__sub > li::before{
 }
 
 .article-list-link-btn:hover{
-  background-color: #f37021;
+  background-color: #0069d9;
   color: #fff !important;
   text-decoration: none;
 }
@@ -4701,10 +4706,6 @@ ul.home-categories__sub > li::before{
 
 .sidenav-item.current-article{
   background-color: #576476;
-}
-
-.sidenav-item:hover{
-  background-color: #f37021;
 }
 
 .side-bar-custom .sidenav-item{
@@ -4745,8 +4746,8 @@ ul.home-categories__sub > li::before{
 
 .breadcrumbs-btn:hover{
   color: #fff !important;
-  border: 1px solid #f37021;
-  background-color: #f37021;
+  border: 1px solid #0069d9;
+  background-color: #0069d9;
   text-decoration: none;
 }
 
@@ -4886,11 +4887,11 @@ ul.home-categories__sub > li::before{
 }
 
 .article-body a{
-  color: #f37021;
+  color: #0069d9;
 }
 
 .article-body a:visited{
-  color: #f37021;
+  color: #0069d9;
 }
 
 .article-title{
