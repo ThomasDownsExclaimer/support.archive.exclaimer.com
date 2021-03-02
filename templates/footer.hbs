@@ -1,82 +1,95 @@
   <!-- Widget configuration options -->
-<script type="text/javascript">
-  window.zESettings = {
-    webWidget: {
-      launcher: {
-        label: {
-          '*': 'Get help?'
-        },
-        chatLabel: {
-          '*': 'Chat online'
-        },
-        mobile: {
-          labelVisible: true
-        }
-      },
-      contactOptions: {
-        enabled: true,
-        title: {
-          '*': 'Contact Us'
-        },
-        contactButton: {
-          '*': 'Get in touch'
-        },
-        chatLabelOnline: {
-          '*': 'Chat online'
-        },
-        chatLabelOffline: {
-          '*': 'Chat is unavailable'
-        },
-        contactFormLabel: {
-          '*': 'Raise a ticket'
-        }
-      },
-      chat: {
-        title: {
-          '*': 'Ask Us Anything'
-        },
-        departments: {
-          enabled: ['Technical Support','Sales','Partners'],
-          select: 'Technical Support'
-        },
-        hidewhenoffline: true,
-        prechatForm: {
-          greeting: {
-            '*': 'In order to help you as quickly as we can, please provide a little background information in the message area below and start the chat. \n\n'
+    <script type="text/javascript">
+      window.zESettings = {
+        webWidget: {
+          // Color API - All Sites
+          color: {
+            theme: "#576476",
+            launcher: "#576476", // This will also update the badge
+            launcherText: "#FFFFFF",
+            button: "#576476",
+            resultLists: "#576476",
+            header: "#576476",
+            articleLinks: "#576476",
           },
-          departmentLabel: {
-            '*': 'Select a department'
-          }
+          // Launcher API - All Sites
+          launcher: {
+            label: {
+              "*": "Get help?",
+            },
+            chatLabel: {
+              "*": "Chat online",
+            },
+            mobile: {
+              labelVisible: true,
+            },
+          },
+          // Chat API - All Sites
+          chat: {
+            title: {
+              "*": "Ask Us Anything",
+            },
+            departments: {
+              enabled: ["Technical Support", "Sales"],
+              select: "Technical Support",
+            },
+            hideWhenOffline: true,
+            prechatForm: {
+              greeting: {
+                "*":
+                  "To ensure our representatives can help you as quickly as we can.\n\nPlease provide a as much information as you can about your query in the message area below.\n",
+              },
+              departmentLabel: {
+                "*": "Select a department",
+              },
+            },
+            offlineForm: {
+              greeting: {
+                "*": "We aren't online right now, please leave a message",
+              },
+            },
+          },
+          // Contact options - All Sites
+          contactOptions: {
+            enabled: true,
+            title: {
+              "*": "Contact Us",
+            },
+            contactButton: {
+              "*": "Get in touch",
+            },
+            chatLabelOnline: {
+              "*": "Chat online",
+            },
+            chatLabelOffline: {
+              "*": "Chat is unavailable",
+            },
+            contactFormLabel: {
+              "*": "Raise a ticket",
+            },
+          },
+          // Helpcenter API - All Sites
+          helpCenter: {
+            title: {
+              "*": "Search the help",
+            },
+            searchPlaceholder: {
+              "*": "Search the knowledge base",
+            },
+          },
+          // Contact Form API */
+          contactForm: {
+            title: {
+              "*": "Raise a ticket",
+            },
+            selectTicketForm: {
+              "*": "Please choose:",
+            },
+            ticketForms: [{ id: 360001126691 }],
+          },
         },
-        offlineForm: {
-          greeting: {
-            '*': "We aren't online right now, please leave a message",
-          }
-        }
-      },
-      helpCenter: {
-        title: {
-          '*': 'Search the help'
-        },
-        searchPlaceholder: {
-          '*': 'Search the knowledge base'
-        }
-      },
-      Talk: {
-        suppress: true
-      },
-      contactForm: {
-        title: {
-          '*': 'Raise a ticket'
-        },
-        selectTicketForm: {
-          '*': 'Please choose:'
-        },
-        ticketForms: [{ id: 360001126691 }]
-      }
-    }
-  };
-</script>
+      };
+    </script>
   
 <!-- Script turns off chat when Tech Support is unavailable -->
 <script>
