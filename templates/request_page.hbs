@@ -154,60 +154,94 @@
           {{/if}}
         </dl>
 
-        <dl class="request-details">
-          {{#if assignee}}
-            <dt>{{t 'assignee'}}</dt>
-            <dd>
-              {{assignee.name}}
-            </dd>
-          {{/if}}
+      <dl class="request-details">
+        {{#if assignee}}
+        <dt>{{t 'assignee'}}</dt>
+        <dd>
+          {{assignee.name}}
+        </dd>
+        {{/if}}
 
-          <dt>{{t 'id'}}</dt>
-          <dd>#{{request.id}}</dd>
+        <dt>{{t 'id'}}</dt>
+        <dd>#{{request.id}}</dd>
 
-          {{#form 'organization' id='request-organization'}}
-            <dt>{{t 'organization'}}</dt>
-            <dd>{{select 'organization'}}</dd>
-          {{/form}}
+        <dt>{{t 'status'}}</dt>
+        <dd>
+          <span class="status-label status-label-{{request.status}}" title="{{request.status_description}}">
+            {{request.status_name}}
+          </span>
+        </dd>
 
-          {{#if group}}
-            <dt>{{t 'group'}}</dt>
-            <dd>
-              {{group.name}}
-            </dd>
-          {{/if}}
+        {{#form 'organization' id='request-organization'}}
+        <dt>{{t 'organization'}}</dt>
+        <dd>{{select 'organization'}}</dd>
+        {{/form}}
 
-          <dt>{{t 'status'}}</dt>
-          <dd>
-            <span class="status-label status-label-{{request.status}}" title="{{request.status_description}}">
-              {{request.status_name}}
-            </span>
-          </dd>
+        {{!-- {{#if group}}
+        <dt>{{t 'group'}}</dt>
+        <dd>
+          {{group.name}}
+        </dd>
+        {{/if}} --}}
 
-          {{#if request.type}}
-            <dt>{{t 'type'}}</dt>
-            <dd>
-              {{request.type_name}}
-              {{#is request.type 'task'}}
-                {{t 'task_due_date' due_date=request.due_date}}
-              {{/is}}
-            </dd>
-          {{/if}}
+        {{#if request.type}}
+        <dt>{{t 'type'}}</dt>
+        <dd>
+          {{request.type_name}}
+          {{#is request.type 'task'}}
+          {{t 'task_due_date' due_date=request.due_date}}
+          {{/is}}
+        </dd>
+        {{/if}}
 
-          {{#if request.priority}}
-            <dt>{{t 'priority'}}</dt>
-            <dd>
-              {{request.priority_name}}
-            </dd>
-          {{/if}}
+        {{#if request.priority}}
+        <dt>{{t 'priority'}}</dt>
+        <dd>
+          {{request.priority_name}}
+        </dd>
+        {{/if}}
 
-          {{#each custom_fields}}
-            <dt>{{title}}</dt>
-            <dd>
-              {{value}}
-            </dd>
-          {{/each}}
-        </dl>
+        {{#each custom_fields}}
+        {{#is title 'Product'}}
+        <dt>{{title}}</dt>
+        <dd>
+          {{value}}
+        </dd>
+        {{/is}}
+        {{#is title 'Category'}}
+        {{#isnt value '—'}}
+        <dt>{{title}}</dt>
+        <dd>
+          {{value}}
+        </dd>
+        {{/isnt}}
+        {{/is}}
+        {{#is title 'Company Tag'}}
+        {{#isnt value '—'}}
+        <dt>{{title}}</dt>
+        <dd>
+          {{value}}
+        </dd>
+        {{/isnt}}
+        {{/is}}
+        {{#is title 'Subscription ID'}}
+        {{#isnt value '—'}}
+        <dt>{{title}}</dt>
+        <dd>
+          {{value}}
+        </dd>
+        {{/isnt}}
+        {{/is}}
+        {{#is title 'License Key'}}
+        {{#isnt value '—'}}
+        <dt>{{title}}</dt>
+        <dd>
+          {{value}}
+        </dd>
+        {{/isnt}}
+        {{/is}}
+        {{/each}}
+      </dl>
 
         {{#if attachments}}
           <dl class="request-details request-attachments">
