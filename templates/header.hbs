@@ -18,7 +18,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <nav class="user-nav" id="user-nav">
       {{link 'new_request' class='submit-a-request'}}
     </nav>
-    {{#if signed_in}}
+    {{user_info}}
+{{!--     {{#if signed_in}}
       <div class="user-info dropdown">
         <div class="btn with-image dropdown-toggle" aria-haspopup="true">
           {{user_avatar class="user-avatar"}}
@@ -27,15 +28,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </span>
         </div>
         <div class="dropdown-menu" role="menu">
-          <a role="menuitem" href="https://support.exclaimer.com/hc/en-gb/requests">My activites</a>
-          <a role="menuitem" href="/access/logout?return_to=https://exclaimercloud.zendesk.com/hc/en-gb">Sign out</a>
+          <a role="menuitem" href="https://support.archive.exclaimer.com/hc/en-gb/requests">My activites</a>
+          <a role="menuitem" href="/access/logout?return_to=https://ecma.zendesk.com/hc/en-gb">Sign out</a>
         </div>
       </div>
     {{else}}
       {{#link "sign_in" class="sign-in"}}
         {{t 'sign_in'}}
       {{/link}}
-    {{/if}}
+    {{/if}} --}}
   </div>
 </header>
 
